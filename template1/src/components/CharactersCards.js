@@ -1,13 +1,13 @@
 import React, {Component} from "react";
-import "./CharactersCards.css";
+import CharactersCard from "./CharactersCard/CharactersCard";
 
 class CharactersCards extends Component {
     render() {
-        const test = this.props.elements.map(el => <p key={el.name}> {el.name}</p>);
+        const content = this.props.elements.map(el => <CharactersCard key={el.name} name={el.name} height={el.height} mass={el.mass} gender={el.gender} />);
 
         return (
             <div>
-                {test}
+                {content}
             </div>  
         );
     }

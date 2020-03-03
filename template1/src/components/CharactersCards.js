@@ -1,12 +1,12 @@
 import React, {Component} from "react";
-import CharactersCard from "./CharactersCard/CharactersCard";
+import CharacterCard from "./CharacterCard/CharacterCard";
 
 class CharactersCards extends Component {
     render() {
-        const content = this.props.elements.map(el => <CharactersCard key={el.name} name={el.name} height={el.height} mass={el.mass} gender={el.gender} />);
+        const content = this.props.elements.map(el => <CharacterCard key={el.name} name={el.name} height={el.height} mass={el.mass} gender={el.gender} />);
 
         return (
-            <div>
+            <div className="container">
                 {content}
             </div>  
         );

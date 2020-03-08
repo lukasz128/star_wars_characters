@@ -20,7 +20,7 @@ class StarWarsCharactersCards extends Component {
             .then(({data : { results }})=> {
                 this.setState({characters: results, loader: false});
             }).catch( err => {
-                this.setState({error : err})
+                this.setState({error : err});
             });
     }
     render() {

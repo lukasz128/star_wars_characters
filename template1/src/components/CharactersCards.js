@@ -4,9 +4,7 @@ import FetchError from "./shared/FetchError";
 import LoadingSpinner from "./shared/LoadingSpinner";
 
 class CharactersCards extends Component {
-    render() {
-        const content = this.props.elements.map(el => <CharacterCard key={el.name} name={el.name} height={el.height} mass={el.mass} gender={el.gender} />);
-        
+    render() {   
         if(this.props.error) {
             return(<FetchError />);
         }
@@ -16,7 +14,7 @@ class CharactersCards extends Component {
         else {
             return (
                 <>
-                    {content}
+                    {this.props.elements.map(el => <CharacterCard key={el.name} name={el.name} height={el.height} mass={el.mass} gender={el.gender} />)}
                 </>  
             );  
         }

@@ -1,0 +1,29 @@
+.loader-box {
+	height: 100vh;
+	width: 100vw;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.loader-box .loader {
+    width: 1rem;
+    height: 1rem;
+    margin: .5rem;
+    border: 1rem solid #f3f3f3;
+    border-radius: 50%;
+    opacity: 1;
+}
+.loader-box .loader:nth-child(1) {
+    animation: dot-one 1s infinite  ;
+}
+.loader-box .loader:nth-child(2) {
+    animation: dot-one 1s infinite  .4s ;
+}
+.loader-box .loader:nth-child(3) {
+    animation: dot-one 1s infinite  .8s ;
+}
+@keyframes dot-one {
+    100% {
+        opacity: 0;
+    }
+}

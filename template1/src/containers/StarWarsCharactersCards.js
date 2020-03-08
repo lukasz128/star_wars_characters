@@ -9,19 +9,23 @@ class StarWarsCharactersCards extends Component {
         super(props);
 
         this.state = {
-            characters: []
+            characters: [],
+            error: null,
+            loader: true
         }
     }
 
     componentDidMount() {
         axios.get(API_URL)
             .then(({data : { results }})=> {
-                this.setState({characters: results});
+                this.setState({characters: results, loader: false});
+            }).catch( err => {
+                this.setState({error : err})
             });
     }
     render() {
         return(
-            <CharactersCards elements={this.state.characters} />
+            <CharactersCards elements={this.state.characters} loader={this.state.loader} error={this.state.error} />
         );
     }
 }
